@@ -11,7 +11,17 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  late TabController tabControllerTo;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    tabControllerTo = TabController(
+      length: 2,
+      vsync: this,
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,8 +32,36 @@ class _HomeScreenState extends State<HomeScreen> {
             const Padding(
               padding: EdgeInsets.only(bottom: 12),
               child: SliderGlobal(),
+            ), SizedBox(
+              child: TabBar(
+                  physics: const NeverScrollableScrollPhysics(),
+                  controller: tabControllerTo,
+                  isScrollable: true,
+                  labelColor: mediumGray,
+                  tabAlignment: TabAlignment.center,
+                  // indicatorColor: primary1,
+                  unselectedLabelColor: primary1,
+                  // unselectedLabelColor: AppColor.primaryText,
+                  labelStyle: TextStyle(
+                      fontSize: 15.dp,
+                      fontFamily: 'poppins',
+                      fontWeight: FontWeight.w600),
+                  dividerColor: primary1,
+                  indicator: const BoxDecoration(
+                      border: Border(
+
+                          bottom: BorderSide(
+                              color: primary1, width: 2))),
+                  tabs:  [
+                    Tab(
+                      text: "  Custom Search  ",
+                    ),
+                    Tab(
+                      text: "  Search with Matri ID ",
+                    ),
+                  ]),
             ),
-            Padding(
+           /* Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: SizedBox(
                 height: 11.h,
@@ -55,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-            ),
+            ),*/
             ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
