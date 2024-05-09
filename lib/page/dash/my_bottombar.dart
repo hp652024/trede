@@ -62,7 +62,7 @@ class _MyBottomState extends State<MyBottom> {
         },
       ),
       appBar: AppBar(
-        backgroundColor: appBarColor,
+        backgroundColor: themeColor,
         leading: const Padding(
           padding: EdgeInsets.all(8.0),
           child: CircleAvatar(
