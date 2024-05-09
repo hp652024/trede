@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DashProvider extends ChangeNotifier
+class HomeProvider extends ChangeNotifier
 {
   int pageIndex=0;
 

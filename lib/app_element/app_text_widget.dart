@@ -1,0 +1,63 @@
+
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+TextStyle appTextStyle({
+  // bool? inherit,
+  Color? color,
+  Color? backgroundColor,
+  double? fontSize,
+  FontWeight? fontWeight,
+  FontStyle? fontStyle,
+  double? letterSpacing,
+  double? wordSpacing,
+  TextBaseline? textBaseline,
+  double? height,
+  // TextLeadingDistribution? leadingDistribution,
+  Locale? locale,
+  Paint? foreground,
+  Paint? background,
+  List<Shadow>? shadows,
+  List<FontFeature>? fontFeatures,
+  // List<FontVariation>? fontVariations,
+  TextDecoration? decoration,
+  Color? decorationColor,
+  TextDecorationStyle? decorationStyle,
+  double? decorationThickness,
+  String? debugLabel,
+  // String? fontFamily,
+  // List<String>? fontFamilyFallback,
+  // String? package,
+  // TextOverflow? overflow,
+}) {
+  return GoogleFonts.fredoka(
+    // inherit: inherit!,
+    color: color,
+    backgroundColor: backgroundColor,
+    fontSize: fontSize != null ? fontSize : 15,
+    fontWeight: fontWeight != null ? fontWeight : FontWeight.w400,
+    fontStyle: fontStyle ?? fontStyle,
+    letterSpacing: letterSpacing ?? letterSpacing,
+    wordSpacing: wordSpacing ?? wordSpacing,
+    textBaseline: textBaseline ?? textBaseline,
+    height: height ?? height,
+    // leadingDistribution: leadingDistribution ?? leadingDistribution,
+    locale: locale ?? locale,
+    foreground: foreground ?? foreground,
+    background: background ?? background,
+    shadows: shadows ?? shadows,
+    fontFeatures: fontFeatures ?? fontFeatures,
+    // fontVariations: fontVariations ?? fontVariations,
+    decoration: decoration==null?TextDecoration.none:decoration,
+    decorationColor: decorationColor ?? decorationColor,
+    decorationStyle: decorationStyle ?? decorationStyle,
+    decorationThickness: decorationThickness ?? decorationThickness,
+    // debugLabel: newDebugLabel,
+    // fontFamily: fontFamily,
+    // fontFamilyFallback: fontFamilyFallback,
+    // package: package,
+    // overflow: overflow,
+  );
+}
+

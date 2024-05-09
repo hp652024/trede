@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:moneytomoney/app_element/provider_class_intialize.dart';
-import 'package:moneytomoney/page/dash/dash_provider.dart';
+import 'package:moneytomoney/page/bottombar/my_bottombar.dart';
+
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-import 'app_element/global_variable.dart';
-import 'page/dash/my_bottombar.dart';
+
 
 
 void main() {
