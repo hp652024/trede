@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:moneytomoney/app_element/global_variable.dart';
 import 'package:moneytomoney/app_element/images_path.dart';
 import 'package:moneytomoney/page/dash/dash_provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 import 'package:moneytomoney/app_element/appcolor.dart';
+
+import '../../app_element/font_style.dart';
+import '../../utils/app_drawer.dart';
+import '../../utils/appbar.dart';
 
 class MyBottom extends StatefulWidget {
   MyBottom({Key? key}) : super(key: key);
@@ -15,6 +18,7 @@ class MyBottom extends StatefulWidget {
 
 class _MyBottomState extends State<MyBottom> {
   final PageController _pageController = PageController();
+  final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>();
 
   @override
   void dispose() {
@@ -24,8 +28,10 @@ class _MyBottomState extends State<MyBottom> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(key: scaffoldKey,
+      drawer: AppDrawar(),
       backgroundColor: white,
+      drawerEnableOpenDragGesture: false,
       bottomNavigationBar: Consumer<DashProvider>(
         builder: (context, value, child) {
           return Container(
@@ -61,38 +67,7 @@ class _MyBottomState extends State<MyBottom> {
           );
         },
       ),
-      appBar: AppBar(
-        backgroundColor: themeColor,
-        leading: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            backgroundColor: Colors.blue,
-          ),
-        ),
-        title: const Text(
-          "Hiren Surani",
-          style: TextStyle(color: white),
-        ),
-        actions: [
-          Container(
-            padding: const EdgeInsets.all(8.0),
-            margin: const EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-              color: white,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Row(
-              children: [
-                const Icon(Icons.account_balance_wallet_outlined),
-                SizedBox(
-                  width: 3.w,
-                ),
-                const Text("₹100"),
-              ],
-            ),
-          ),
-        ],
-      ),
+      appBar: MainAppBar(context, scaffoldKey),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -158,7 +133,7 @@ class _MyBottomState extends State<MyBottom> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-            "${ImagePath.path.bottombarImage}${img}",
+            "${ImagePath.path.bottombarIcon}${img}",
             height: 5.w,
             width: 5.w,
             fit: BoxFit.fill,
