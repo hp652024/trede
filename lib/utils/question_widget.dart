@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:sizer/sizer.dart';
 
 import '../app_element/appcolor.dart';
@@ -13,7 +11,7 @@ class Question extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: 43.w,
+        height: 22.h,
         decoration: BoxDecoration(
             color: offWhite, borderRadius: BorderRadius.circular(10)),
         child: Column(

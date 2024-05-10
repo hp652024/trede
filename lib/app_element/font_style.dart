@@ -20,6 +20,7 @@ Text body10w400({required String text, Color? textColor}) {
         color: textColor == null ? black : textColor,
         fontSize: 7.sp,
         fontWeight: FontWeight.w400),
+
   );
 }
 

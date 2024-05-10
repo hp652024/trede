@@ -4,6 +4,7 @@ import 'package:moneytomoney/app_element/font_style.dart';
 import 'package:moneytomoney/app_element/images_path.dart';
 import 'package:moneytomoney/page/bottombar/dash_provider.dart';
 import 'package:moneytomoney/page/home/home_screen.dart';
+import 'package:moneytomoney/page/opinion/opinion.dart';
 
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
@@ -91,7 +92,7 @@ class _MyBottomState extends State<MyBottom> {
 
       ),
       body: Consumer<HomeProvider>(builder: (context, value, child) {
-        return value.pageIndex == 0? const HomeScreen():const SizedBox();
+        return value.pageIndex == 0? const HomeScreen(): Opinion();
       },)
 
     );
