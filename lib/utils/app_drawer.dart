@@ -27,7 +27,7 @@ class _AppDrawarState extends State<AppDrawar> {
                 alignment: Alignment.topLeft,
                 child: backArrow(() {
                   Navigator.pop(context);
-                }),
+                },black),
               ),
               height(15),
               Center(
@@ -67,6 +67,8 @@ class _AppDrawarState extends State<AppDrawar> {
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Row(
                   children: [
+                    body15w400(text: "App Version:1.0.0()"),
+                    const Spacer(),
                     Image.asset(
                       "${ImagePath.path.socialIcon}insta.png",
                       height: 18.sp,

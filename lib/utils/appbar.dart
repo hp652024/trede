@@ -3,7 +3,9 @@ import 'package:moneytomoney/app_element/appcolor.dart';
 import 'package:moneytomoney/app_element/font_style.dart';
 import 'package:sizer/sizer.dart';
 
-MainAppBar(BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) {
+import '../page/wallet/wallet_screen.dart';
+
+mainAppBar(BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) {
   return AppBar(
     backgroundColor: themeColor,
     leading: leadingAppbar(context, scaffoldKey),
@@ -14,9 +16,19 @@ MainAppBar(BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) {
         child: Icon(Icons.notifications_active_outlined,
             color: white, size: 15.sp),
       ),
-      walletIcon(),
+      walletIcon(context),
       width(8),
     ],
+  );
+}
+
+titleAppBar(BuildContext context, String title,Color bgColor,Color titleColor) {
+  return AppBar(
+    backgroundColor: bgColor,
+    leading: backArrow(() {
+      Navigator.pop(context);
+    },white),
+    title: title18w600(text: "${title}", textColor: titleColor),
   );
 }
 
@@ -47,23 +59,33 @@ Widget leadingAppbar(
   );
 }
 
-Widget walletIcon() {
-  return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      padding: EdgeInsets.symmetric(horizontal: 8),
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-          color: white.withOpacity(0.70),
-          borderRadius: BorderRadius.circular(20)),
-      child: Icon(Icons.account_balance_wallet_outlined,
-          size: 15.sp, color: black));
+Widget walletIcon(BuildContext context) {
+  return InkWell(
+    onTap: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => WalletScreen(),
+          ));
+    },
+    child: Container(
+        margin: EdgeInsets.symmetric(vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 8),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            color: white.withOpacity(0.70),
+            borderRadius: BorderRadius.circular(20)),
+        child: Icon(Icons.account_balance_wallet_outlined,
+            size: 15.sp, color: black)),
+  );
 }
 
-Widget backArrow(void Function() onTap) {
+Widget backArrow(void Function() onTap,Color iconColor) {
   return InkWell(
-      onTap: onTap, child: Icon(Icons.arrow_back, size: 20.sp, color: black));
+      onTap: onTap, child: Icon(Icons.arrow_back, size: 20.sp, color: iconColor));
 }
 
 Widget circleImage(double redius, ImageProvider image) {
-  return CircleAvatar(radius: redius, backgroundImage: image,backgroundColor: offWhite);
+  return CircleAvatar(
+      radius: redius, backgroundImage: image, backgroundColor: offWhite);
 }

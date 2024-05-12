@@ -39,6 +39,7 @@ dependencies:
   carousel_slider: ^4.2.1
   sizer: ^2.0.15
   flutter_svg: ^2.0.10+1
+  neopop: ^1.0.2
 
 dev_dependencies:
   flutter_test:

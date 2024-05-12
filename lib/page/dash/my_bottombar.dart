@@ -67,7 +67,7 @@ class _MyBottomState extends State<MyBottom> {
           );
         },
       ),
-      appBar: MainAppBar(context, scaffoldKey),
+      appBar: mainAppBar(context, scaffoldKey),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
