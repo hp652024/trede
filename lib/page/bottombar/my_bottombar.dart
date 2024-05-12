@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:moneytomoney/app_element/images_path.dart';
-import 'package:moneytomoney/page/dash/dash_provider.dart';
+import 'package:moneytomoney/page/bottombar/dash_provider.dart';
+import 'package:moneytomoney/page/home/home_screen.dart';
+import 'package:moneytomoney/page/opinion/opinion.dart';
+
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 import 'package:moneytomoney/app_element/appcolor.dart';
@@ -35,7 +38,7 @@ class _MyBottomState extends State<MyBottom> {
       bottomNavigationBar: Consumer<DashProvider>(
         builder: (context, value, child) {
           return Container(
-            height: 6.h,
+            height: 7.h,
             padding: EdgeInsets.all(8),
             alignment: Alignment.center,
             decoration: BoxDecoration(
@@ -96,38 +99,18 @@ class _MyBottomState extends State<MyBottom> {
           ),*/
           Column(children: [
 
-          ],),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 7.h,margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  color: white,
-                  borderRadius: BorderRadius.circular(10)),
-              padding: EdgeInsets.all(2.sp),
-              child: Consumer<DashProvider>(builder: (context, value, child) {
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    bottom_tab("Match", value.pageIndex!=0?"match.png":"select_match.png", 0),
-                    bottom_tab("Opinion", value.pageIndex==1?"select_opinion.png":"opinion.png", 1),
-                    bottom_tab("Portfolio", value.pageIndex==2?"select_portfolio.png":"portfolio.png", 2),
-                    bottom_tab("Reward", value.pageIndex==3?"select_reward.png":"reward.png", 3),
-                  ],
-                );
-              },),
-            ),
-          ),
-        ],
-      ),*/
+      ),
+      body: Consumer<HomeProvider>(builder: (context, value, child) {
+        return value.pageIndex == 0? const HomeScreen(): Opinion();
+      },)
+
     );
   }
 
   Widget bottom_tab(String img, String lable, int index) {
     return InkWell(
       onTap: () {
-        context.read<DashProvider>().chnagePageIndex(index);
+        context.read<HomeProvider>().chnagePageIndex(index);
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
