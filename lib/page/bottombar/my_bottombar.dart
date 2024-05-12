@@ -48,23 +48,23 @@ class _MyBottomState extends State<MyBottom> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 bottom_tab(
-                    value.pageIndex == 0 ? "select_match.png" : "match.png",
+                    value.pageIndex == 0?"select_match.png" : "match.png",
                     value.pageIndex == 0?title12w600(text: "MATCH",textColor: themeColor):body12w400(text: "MATCH"),
                     0),
+                // bottom_tab(
+                //     value.pageIndex == 1 ? "select_opinion.png" : "opinion.png",
+                //     value.pageIndex == 1?title12w600(text: "OPINION",textColor: themeColor):body12w400(text: "OPINION"),
+                //     1),
                 bottom_tab(
-                    value.pageIndex == 1 ? "select_opinion.png" : "opinion.png",
-                    value.pageIndex == 1?title12w600(text: "OPINION",textColor: themeColor):body12w400(text: "OPINION"),
-                    1),
-                bottom_tab(
-                    value.pageIndex == 2
+                    value.pageIndex == 1
                         ? "select_portfolio.png"
                         : "portfolio.png",
-                    value.pageIndex == 2?title12w600(text: "PORTFOLIO",textColor: themeColor):body12w400(text: "PORTFOLIO"),
-                    2),
+                    value.pageIndex == 1?title12w600(text: "PORTFOLIO",textColor: themeColor):body12w400(text: "PORTFOLIO"),
+                    1),
                 bottom_tab(
-                    value.pageIndex == 3 ? "select_reward.png" : "reward.png",
-                    value.pageIndex == 3?title12w600(text: "REWARD",textColor: themeColor):body12w400(text: "REWARD"),
-                    3),
+                    value.pageIndex == 2? "select_reward.png" : "reward.png",
+                    value.pageIndex == 2?title12w600(text: "REWARD",textColor: themeColor):body12w400(text: "REWARD"),
+                    2),
               ],
             ),
           );
@@ -77,7 +77,9 @@ class _MyBottomState extends State<MyBottom> {
                 index: value.pageIndex,
                 children: <Widget>[
                   HomeScreen(),
-                  Opinion(),
+                  // Opinion(),
+                  title12w600(text: "portfolio"),
+                  title12w600(text: "reward"),
                 ],
               );
             },
