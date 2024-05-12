@@ -59,13 +59,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     indicator: const BoxDecoration(
 
                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: appBarColor,
+                      color: themeColor,
                         border: Border(
                             bottom: BorderSide(
                                 color: Colors.black, ))),
                     tabs:  [
                       Tab(
-
                         child: Row(mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                              Text("Cricket")

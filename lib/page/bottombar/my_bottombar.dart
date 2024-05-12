@@ -42,28 +42,28 @@ class _MyBottomState extends State<MyBottom> {
             padding: EdgeInsets.all(8),
             alignment: Alignment.center,
             decoration: BoxDecoration(
-                color: offWhite,
-                border: Border(top: BorderSide(color: black, width: 1))),
+                color: white,
+                border: Border(top: BorderSide(color: themeColor, width: 1))),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 bottom_tab(
                     value.pageIndex == 0 ? "select_match.png" : "match.png",
-                    "MATCH",
+                    value.pageIndex == 0?title12w600(text: "MATCH",textColor: themeColor):body12w400(text: "MATCH"),
                     0),
                 bottom_tab(
                     value.pageIndex == 1 ? "select_opinion.png" : "opinion.png",
-                    "OPINION",
+                    value.pageIndex == 1?title12w600(text: "OPINION",textColor: themeColor):body12w400(text: "OPINION"),
                     1),
                 bottom_tab(
                     value.pageIndex == 2
                         ? "select_portfolio.png"
                         : "portfolio.png",
-                    "PORTFOLIO",
+                    value.pageIndex == 2?title12w600(text: "PORTFOLIO",textColor: themeColor):body12w400(text: "PORTFOLIO"),
                     2),
                 bottom_tab(
                     value.pageIndex == 3 ? "select_reward.png" : "reward.png",
-                    "REWARD",
+                    value.pageIndex == 3?title12w600(text: "REWARD",textColor: themeColor):body12w400(text: "REWARD"),
                     3),
               ],
             ),
@@ -71,46 +71,23 @@ class _MyBottomState extends State<MyBottom> {
         },
       ),
       appBar: mainAppBar(context, scaffoldKey),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            body10w400(text: "prince"),
-            body12w400(text: "prince"),
-            body15w400(text: "prince"),
-            body18w400(text: "prince"),
-          ],
-        ),
-      ),
-      /*Stack(
-        children: [
-      /*Consumer<DashProvider>(
+      body: Consumer<DashProvider>(
             builder: (context, value, child) {
               return IndexedStack(
                 index: value.pageIndex,
                 children: <Widget>[
                   HomeScreen(),
-                  Container(),
-                  WalletScreen(),
-                  WalletScreen(),
+                  Opinion(),
                 ],
               );
             },
-          ),*/
-          Column(children: [
-
-      ),
-      body: Consumer<HomeProvider>(builder: (context, value, child) {
-        return value.pageIndex == 0? const HomeScreen(): Opinion();
-      },)
-
-    );
+          ));
   }
 
-  Widget bottom_tab(String img, String lable, int index) {
+  Widget bottom_tab(String img,Widget lable, int index) {
     return InkWell(
       onTap: () {
-        context.read<HomeProvider>().chnagePageIndex(index);
+        context.read<DashProvider>().changePageIndex(index);
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -121,7 +98,7 @@ class _MyBottomState extends State<MyBottom> {
             width: 5.w,
             fit: BoxFit.fill,
           ),
-          body10w400(text: "${lable}"),
+          lable
         ],
       ),
     );

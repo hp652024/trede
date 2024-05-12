@@ -67,7 +67,7 @@ class Question extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.h),
               child: Container(
                 decoration: BoxDecoration(
-                    color: appBarColor,
+                    color: themeColor,
                     borderRadius: BorderRadius.circular(5)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -96,7 +96,7 @@ class Question extends StatelessWidget {
                     child: Container(
                       height: 9.w,
                       decoration: BoxDecoration(
-                          color: appBarColor,
+                          color: themeColor,
                           borderRadius: BorderRadius.circular(8)),
                       child: Center(
                           child: Text(

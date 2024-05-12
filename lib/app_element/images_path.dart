@@ -7,4 +7,5 @@ class ImagePath
   String defaultImage="assets/default_Image/";
   String drawarIcon="assets/icon/drawar_icon/";
   String socialIcon="assets/icon/social_icon/";
+  String walletIcon="assets/icon/wallet_icon/";
 }

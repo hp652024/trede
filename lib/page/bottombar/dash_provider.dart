@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class HomeProvider extends ChangeNotifier
+class DashProvider extends ChangeNotifier
 {
   int pageIndex=0;
 
-  void chnagePageIndex(int index)
+  void changePageIndex(int index)
   {
     pageIndex=index;
     notifyListeners();

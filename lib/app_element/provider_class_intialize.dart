@@ -4,5 +4,5 @@ import 'package:provider/single_child_widget.dart';
 
 
 List<SingleChildWidget> providerClass=[
-  ChangeNotifierProvider(create: (context) => HomeProvider(),),
+  ChangeNotifierProvider(create: (context) => DashProvider(),),
 ];
