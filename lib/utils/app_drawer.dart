@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:moneytomoney/app_element/appcolor.dart';
 import 'package:moneytomoney/app_element/font_style.dart';
 import 'package:moneytomoney/app_element/images_path.dart';
+import 'package:moneytomoney/page/drawar_screen/setting/setting.dart';
 import 'package:moneytomoney/utils/appbar.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 class AppDrawar extends StatefulWidget {
@@ -47,7 +49,7 @@ class _AppDrawarState extends State<AppDrawar> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 10),
+                margin: const EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: offWhite,
@@ -59,10 +61,18 @@ class _AppDrawarState extends State<AppDrawar> {
                     tile(Icons.support_agent_rounded, "Term & Condition"),
                     tile(Icons.star_rate_outlined, "Rate Trade"),
                     tile(Icons.message_outlined, "Pulse"),
+                    InkWell(onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>const SettingScreen()
+                        ),
+                      );
+
+                    },child: tile(Icons.settings, "setting")),
                   ],
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
                 child: Row(
@@ -103,7 +113,7 @@ class _AppDrawarState extends State<AppDrawar> {
   Widget detailBox(String icon, String value, String tag) {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10), color: offWhite),
         child: Column(
@@ -126,7 +136,7 @@ class _AppDrawarState extends State<AppDrawar> {
 
   Widget tile(IconData icon, String title) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
       child: Row(
         children: [
           Icon(icon),
