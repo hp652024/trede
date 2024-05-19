@@ -23,13 +23,13 @@ mainAppBar(BuildContext context, GlobalKey<ScaffoldState> scaffoldKey) {
 }
 
 titleAppBar(BuildContext context, String title,Color bgColor,Color titleColor) {
-  return AppBar(
-    backgroundColor: bgColor,
-    leading: backArrow(() {
-      Navigator.pop(context);
-    },white),
-    title: title18w600(text: "${title}", textColor: titleColor),
-  );
+    return AppBar(
+      backgroundColor: bgColor,
+      leading: backArrow(() {
+        Navigator.pop(context);
+      },white),
+      title: title18w600(text: "${title}", textColor: titleColor),
+    );
 }
 
 Widget leadingAppbar(

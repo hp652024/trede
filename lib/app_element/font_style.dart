@@ -47,13 +47,13 @@ Text body12w400({required String text,Color? textColor}) {
 
 // font size 110
 
-Text title15w600({required String text, Color? textColor}) {
+Text title15w600({required String text, Color? textColor,TextAlign? textAlign}) {
   return Text(
     "${text}",
     style: TextStyle(
         color: textColor == null ? black : textColor,
         fontSize: 11.sp,
-        fontWeight: FontWeight.w600),
+        fontWeight: FontWeight.w600,),textAlign: textAlign,
   );
 }
 

@@ -5,10 +5,12 @@ import 'package:moneytomoney/page/bottombar/my_bottombar.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
+import 'page/scoreboard/score_board.dart';
+
 
 
 void main() {
-  runApp( const MyApp());
+  runApp( const MyApp(),);
 }
 
 class MyApp extends StatefulWidget {
@@ -24,9 +26,14 @@ class _MyAppState extends State<MyApp> {
       return Sizer(
         builder: (context, orientation, deviceType) {
           return MultiProvider(
+
             providers: providerClass,
+
             child: MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(useMaterial3: false),
               home: MyBottom(),
+              // home: ScoreBoard(),
             ),
           );
         },

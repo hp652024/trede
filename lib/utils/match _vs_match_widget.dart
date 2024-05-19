@@ -16,11 +16,11 @@ class _MatchVsMatchState extends State<MatchVsMatch> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
       child: Container(
         height: 22.h,
         decoration: BoxDecoration(
-          color: offWhite,
+          color: white,
           borderRadius: BorderRadius.circular(10)
         ),
         child:Column(
@@ -41,6 +41,7 @@ class _MatchVsMatchState extends State<MatchVsMatch> {
                     Container(
                       height: 6.h,
                       width: 10.w,
+
 
                       child: CircleAvatar(
                         backgroundImage: NetworkImage("https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png",),
@@ -77,7 +78,7 @@ Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-            color: white,borderRadius: BorderRadius.circular(10)
+            color: offWhite,borderRadius: BorderRadius.circular(10),
         ),
         child: Column(children: [
           Text( "1.90",style: TextStyle(fontSize: 11.sp,),textAlign: TextAlign.center),
@@ -90,9 +91,8 @@ Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
-
           decoration: BoxDecoration(
-              color: white,borderRadius: BorderRadius.circular(10)
+              color: offWhite,borderRadius: BorderRadius.circular(10)
           ),
           child: Column(children: [
             Text( "1.90",style: TextStyle(fontSize: 11.sp,),textAlign: TextAlign.center),
