@@ -82,7 +82,7 @@ class _ScoreBoardState extends State<ScoreBoard> {
                   color: white,
                   borderRadius: BorderRadius.circular(10),
               border: Border.all(width: 2)),
-              child: title15w600(text: '₹ 20000',textColor: black,textAlign: TextAlign.center),
+              child: Center(child: title15w600(text: '₹ 20000',textColor: black,textAlign: TextAlign.center)),
             ),
 
 

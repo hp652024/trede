@@ -75,6 +75,7 @@ flutter:
     - assets/icon/drawar_icon/
     - assets/icon/social_icon/
     - assets/icon/wallet_icon/
+    - assets/icon/board_icon/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
