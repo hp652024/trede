@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:moneytomoney/app_element/images_path.dart';
 import 'package:moneytomoney/page/bottombar/dash_provider.dart';
 import 'package:moneytomoney/page/home/home_screen.dart';
-import 'package:moneytomoney/page/opinion/opinion.dart';
-
 import 'package:sizer/sizer.dart';
 import 'package:provider/provider.dart';
 import 'package:moneytomoney/app_element/appcolor.dart';
-
 import '../../app_element/font_style.dart';
 import '../../utils/app_drawer.dart';
 import '../../utils/appbar.dart';

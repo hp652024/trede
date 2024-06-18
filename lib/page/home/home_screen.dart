@@ -44,7 +44,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                     padding: const EdgeInsets.all(5.0),
                     child: InkWell(onTap: () {
                       homeProvider.tabOne();
-
                     },
                       child: Container(
                         height: 4.h,
